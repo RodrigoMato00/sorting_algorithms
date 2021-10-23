@@ -42,26 +42,25 @@ void intercambiador_shell(int *array, size_t intervalo, size_t size, size_t list
 void shell_sort(int *array, size_t size)
 {
 	size_t intervalo;
-	size_t a;
+	size_t contador;
 
 	intervalo = 1;
 
 	if (!array || size < 2)
 		return;
 
-	for (a = 0; a < size; a = ((a * 3) + 1))
+	for (contador = 0; contador < size; contador = ((contador * 3) + 1))
 	{
-		if (a < size)
-			intervalo = a;
+		if (contador < size)
+			intervalo = contador;
 	}
 
-        for (; intervalo <= 1; intervalo = ((intervalo - 1) / 3))
+	for (; intervalo >= 1; intervalo = ((intervalo - 1) / 3))
 	{
-
-		for (a = 0; a < size; a++)
+		for (contador = 0; contador < size; contador++)
 		{
-			intercambiador_shell(array, intervalo, size, a);
+			intercambiador_shell(array, contador, size, intervalo);
 		}
 		print_array(array, size);
-        }
+	}
 }

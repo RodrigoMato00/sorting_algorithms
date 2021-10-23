@@ -8,14 +8,14 @@
  *@size: size
  *Return: el valor del pivot
  */
-int part_array(int *array, int i, int j, size_t size)
+int part_array(int *array, int lo, int hi, size_t size)
 {
 	int a, b;
 	int temporal, pivot;
 
-	pivot = array[j];
+	pivot = array[hi];
 
-	for (b = i, a = i - 1; b < j; b++)
+	for (b = lo, a = lo - 1; b < hi; b++)
 	{
 
 		if (array[b] < pivot)
@@ -35,7 +35,7 @@ int part_array(int *array, int i, int j, size_t size)
 	array[a + 1] = pivot;
 	array[b] = temporal;
 
-	if (array[j] != array[a + 1])
+	if (array[hi] != array[a + 1])
 		print_array(array, size);
 
 	return (a + 1);

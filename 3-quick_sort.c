@@ -8,10 +8,10 @@
  *@size: size
  *Return: el valor del pivot
  */
-int part_array(int i, int j, int *array, size_t size)
+int part_array(int *array, int i, int j, size_t size)
 {
 	int a, b;
-	int tmporal, pivot;
+	int temporal, pivot;
 
 	pivot = array[j];
 
@@ -31,7 +31,7 @@ int part_array(int i, int j, int *array, size_t size)
 		}
 	}
 
-	tmporal = array[a + 1];
+	temporal = array[a + 1];
 	array[a + 1] = pivot;
 	array[b] = temporal;
 
@@ -49,14 +49,14 @@ int part_array(int i, int j, int *array, size_t size)
  * @size: size
  *Return: void
  */
-void ordenando_rec(int i, int j, int *array, size_t size)
+void ordenando_rec(int *array, int i, int j, size_t size)
 {
 	int pivot;
 
 	if (i < j)
 	{
 
-		pivot = part_arrey(i, j, array, size);
+		pivot = part_array(array, i, j, size);
 		ordenando_rec(array, i, pivot - 1, size);
 		ordenando_rec(array, pivot + 1, j, size);
 

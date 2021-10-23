@@ -41,8 +41,6 @@ int part_array(int i, int j, int *array, size_t size)
 	return (a + 1);
 }
 
-
-
 /**
  *ordenando_rec - ordenando_rec
  *@i: ind inferior de la particion

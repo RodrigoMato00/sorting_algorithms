@@ -1,88 +1,111 @@
 #include "sort.h"
 
-<<<<<<< HEAD
+/**
+ *nodo_intercambiador -
+ *@c:
+ *@m:
+ *Return: void
+ */
+void nodo_intercambiador(listint_t **c, unsigned char m)
+{
+	listint_t *temporal0;
+	listint_t *temporal1;
 
+	temporal0 = NULL;
+	temporal1 = NULL;
+
+        if (m == 0)
+	{
+                temporal0 = (*c)->prev;
+
+		if (temporal0)
+			temporal1 = temporal0->prev;
+
+		if ((*c)->next)
+			(*c)->next->prev = temporal0;
+
+		temporal0->next = (*c)->next;
+		temporal0->prev = *c;
+		(*c)->next = temporal0;
+		(*c)->prev = temporal1;
+
+		if (temporal1)
+			temporal1->next = *c;
+
+		*c = temporal0;
+	}
+
+	else if (m == 1)
+	{
+
+		temporal0 = (*c)->next;
+
+		if (temporal0)
+			temporal1 = temporal0->next;
+
+		if ((*c)->prev)
+			(*c)->prev->next = temporal0;
+		temporal0->prev = (*c)->prev;
+		temporal0->next = *c;
+		(*c)->prev = temporal0;
+		(*c)->next = temporal1;
+
+		if (temporal1)
+			temporal1->prev = *c;
+
+		*c = temporal0;
+	}
+}
 
 /**
- *cocktail_sort_list - 
- *@list
- *Return: void
+ *cocktail_sort_list -
+ *@list:
+ *Return:void
  */
 void cocktail_sort_list(listint_t **list)
 {
-	
-=======
-void cocktail_sort_list(listint_t **list)
-{
-	unsigned char flag = 1;
-	listint_t *curr, *curr2;
+	unsigned char j;
+	listint_t *c;
+	listint_t *c2;
+
+	j = 1;
 
 	if (!list || !(*list) || !((*list)->next))
 		return;
-	while (flag)
+
+	while (j)
 	{
-		flag = 0;
-		for (curr = *list; curr; curr = curr->next)
+
+		j = 0;
+		for (c = *list; c; c = c->next)
 		{
-			if (curr->prev && (curr->prev->n > curr->n))
+
+			if (c->prev && (c->prev->n > c->n))
 			{
-				flag = 1;
-				nodo_intercambiador(&curr, 0);
-				if (!curr->prev->prev)
-					*list = curr->prev;
+				j = 1;
+				nodo_intercambiador(&c, 0);
+
+				if (!c->prev->prev)
+					*list = c->prev;
 				print_list(*list);
 			}
-			if (curr->next == NULL)
-				curr2 = curr;
+
+			if (c->next == NULL)
+				c2 = c;
 		}
-		for (; curr2; curr2 = curr2->prev)
+
+		for (; c2; c2 = c2->prev)
 		{
-			if (curr2->next && (curr2->next->n < curr2->n))
+
+			if (c2->next && (c2->next->n < c2->n))
 			{
-				flag = 1;
-				nodo_intercambiador(&curr2, 1);
-				if (curr2->prev == NULL)
-					*list = curr2;
+				j = 1;
+				nodo_intercambiador(&c2, 1);
+
+				if (c2->prev == NULL)
+					*list = c2;
 				print_list(*list);
 			}
 		}
 	}
 }
-
-
-void nodo_intercambiador(listint_t **curr, unsigned char mode)
-{
-	listint_t *tmp = NULL, *ptmp = NULL;
-
-	if (mode == 0)
-	{
-		tmp = (*curr)->prev;
-		if (tmp)
-			ptmp = tmp->prev;
-		if ((*curr)->next)
-			(*curr)->next->prev = tmp;
-		tmp->next = (*curr)->next;
-		tmp->prev = *curr;
-		(*curr)->next = tmp;
-		(*curr)->prev = ptmp;
-		if (ptmp)
-			ptmp->next = *curr;
-		*curr = tmp;
-	}
-	else if (mode == 1)
-	{
-		tmp = (*curr)->next;
-		if (tmp)
-			ptmp = tmp->next;
-		if ((*curr)->prev)
-			(*curr)->prev->next = tmp;
-		tmp->prev = (*curr)->prev;
-		tmp->next = *curr;
-		(*curr)->prev = tmp;
-		(*curr)->next = ptmp;
-		if (ptmp)
-			ptmp->prev = *curr;
-		*curr = tmp;
-	}
-}
->>>>>>> d1d23f73200a46403be34ec9d743b1a1e9148f4a

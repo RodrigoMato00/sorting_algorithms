@@ -6,15 +6,14 @@
  *@j: int 2
  *Return: void
  */
-void intercambiador_shell(int *array, size_t intervalo, size_t size, size_t list)
+void intercambiador_shell(int *array, size_t l, size_t size, size_t intervalo)
 {
 	int conf;
 	int a;
 	size_t b;
 	size_t temporal;
 
-
-	for (b = list; b < size; b += intervalo)
+	for (b = l; b < size; b += intervalo)
 	{
 		for (a = b; a >= 0; a -= intervalo)
 		{
@@ -30,7 +29,6 @@ void intercambiador_shell(int *array, size_t intervalo, size_t size, size_t list
 			}
 		}
 	}
-
 }
 
 /**
@@ -50,12 +48,11 @@ void shell_sort(int *array, size_t size)
 		return;
 
 	for (contador = 0; contador < size; contador = ((contador * 3) + 1))
-	{
-		if (contador < size)
-			intervalo = contador;
-	}
-
-	for (; intervalo >= 1; intervalo = ((intervalo - 1) / 3))
+	        {
+		        if (contador < size)
+			        intervalo = contador;
+		}
+        for (; intervalo >= 1; intervalo = ((intervalo - 1) / 3))
 	{
 		for (contador = 0; contador < size; contador++)
 		{

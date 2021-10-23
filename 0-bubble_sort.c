@@ -2,10 +2,10 @@
 #include <stdbool.h>
 
 /**
- * intrcambiador_int - intercambia ints
- * @i: int 1
- * @j: int 2
- * Return: void
+ *intercambiador_int - intercambia ints
+ *@i: int 1
+ *@j: int 2
+ *Return: void
  */
 void intercambiador_int(int *i, int *j)
 {
@@ -17,10 +17,10 @@ void intercambiador_int(int *i, int *j)
 }
 
 /**
- * bubble_sort - bubble sort
- * @array: int *array
- * @size: size_t
- * Return: void
+ *bubble_sort - bubble sort
+ *@array: int *array
+ *@size: size_t
+ *Return: void
  **/
 void bubble_sort(int *array, size_t size)
 {
@@ -34,10 +34,13 @@ void bubble_sort(int *array, size_t size)
 	while (boo == false)
 	{
 		boo = true;
+
 		for (contador = 0; contador < len - 1; contador++)
 		{
-			if(array[contador] > array[contador + 1])
+
+			if (array[contador] > array[contador + 1])
 			{
+
 				intercambiador_int(array + contador, array + contador + 1);
 				print_array(array, size);
 				boo = false;

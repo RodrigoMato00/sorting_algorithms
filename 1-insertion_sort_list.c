@@ -3,7 +3,7 @@
 /**
  *insertion_sort_list - sorts a doubly linked list of integers
  *in ascending order using the Insertion sort algorithm
- *list: list
+ *@list: list
  *Return: void
  */
 void insertion_sort_list(listint_t **list)
@@ -18,9 +18,11 @@ void insertion_sort_list(listint_t **list)
 	while (i)
 	{
 		j = i;
+
 		while (j->prev && j->n < j->prev->n)
 		{
 			j->prev->next = j->next;
+
 			if (j->next)
 			{
 

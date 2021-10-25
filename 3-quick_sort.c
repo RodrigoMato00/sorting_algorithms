@@ -64,7 +64,7 @@ void ordenando_rec(int *array, int i, int j, size_t size)
 }
 
 /**
- *quick_sort - orts an array of integers in
+ *quick_sort - sorts an array of integers in
  *ascending order using the Quick sort algorithm
  *@array: array
  *@size: size

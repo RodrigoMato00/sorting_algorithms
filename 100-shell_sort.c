@@ -32,10 +32,11 @@ void intercambiador_shell(int *array, size_t l, size_t size, size_t intervalo)
 }
 
 /**
- *shell_sort -
- *@array:
- *@size:
- *Return
+ *shell_sort - orts an array of integers in ascending
+ *order using the Shell sort algorithm, using the Knuth sequence
+ *@array: array
+ *@size: size
+ *Return: void
  */
 void shell_sort(int *array, size_t size)
 {

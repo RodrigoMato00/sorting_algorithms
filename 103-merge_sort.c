@@ -64,7 +64,7 @@ void merge_sort(int *array, size_t size)
 	size_t centro;
 	size_t aux;
 
-	int aux_pos[10];
+	int aux_pos[1024];
 
 	if (array == NULL || size < 2)
 	{

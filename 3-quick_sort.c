@@ -2,8 +2,8 @@
 
 /**
  *part_array - partition array
- *@i: i
- *@j: j
+ *@lo: lo
+ *@hi: hi
  *@array: array
  *@size: size
  *Return: el valor del pivot

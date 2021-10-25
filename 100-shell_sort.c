@@ -2,8 +2,10 @@
 
 /**
  *intercambiador_shell - intercambia ints
- *@i: int 1
- *@j: int 2
+ *@array: array
+ *@l: l
+ *@size: size
+ *@intervalo: intervalo
  *Return: void
  */
 void intercambiador_shell(int *array, size_t l, size_t size, size_t intervalo)
@@ -49,11 +51,11 @@ void shell_sort(int *array, size_t size)
 		return;
 
 	for (contador = 0; contador < size; contador = ((contador * 3) + 1))
-	        {
-		        if (contador < size)
-			        intervalo = contador;
-		}
-        for (; intervalo >= 1; intervalo = ((intervalo - 1) / 3))
+	{
+		if (contador < size)
+			intervalo = contador;
+	}
+	for (; intervalo >= 1; intervalo = ((intervalo - 1) / 3))
 	{
 		for (contador = 0; contador < size; contador++)
 		{

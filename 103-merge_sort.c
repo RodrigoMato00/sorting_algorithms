@@ -1,11 +1,12 @@
 #include "sort.h"
 
 /**
- *
- *
- *
- *
- *
+ *print_merge - print and merge
+ *@array: array
+ *@p1: p1
+ *@p2: p2
+ *@size: size
+ *Return: void
  */
 void print_merge(int *array, int *p1, int *p2, size_t size)
 {
@@ -23,7 +24,7 @@ void print_merge(int *array, int *p1, int *p2, size_t size)
 			array[c++] = p1[a++];
 		}
 
-      		else
+		else
 		{
 			array[c++] = p2[b++];
 		}
@@ -41,22 +42,19 @@ void print_merge(int *array, int *p1, int *p2, size_t size)
 	}
 
 	printf("Merging...\n");
-
-        printf("[left]: ");
+	printf("[left]: ");
 	print_array(p1, size_p1);
-
 	printf("[right]: ");
 	print_array(p2, size_p2);
-
 	printf("[Done]: ");
 	print_array(array, size);
 }
 
 /**
- *
- *
- *
- *
+ *merge_sort - merge sort
+ *@array: array
+ *@size: size
+ *Return: void
  */
 void merge_sort(int *array, size_t size)
 {

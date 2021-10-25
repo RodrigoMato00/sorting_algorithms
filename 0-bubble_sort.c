@@ -41,7 +41,8 @@ void bubble_sort(int *array, size_t size)
 			if (array[contador] > array[contador + 1])
 			{
 
-				intercambiador_int(array + contador, array + contador + 1);
+				intercambiador_int(array + contador,
+						   array + contador + 1);
 				print_array(array, size);
 				boo = false;
 			}

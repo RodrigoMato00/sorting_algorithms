@@ -2,10 +2,10 @@
 
 /**
  *intercambiador_shell - intercambia ints
- *@array: array
- *@l: l
- *@size: size
- *@intervalo: intervalo
+ *@array: random number array
+ *@l: integer
+ *@size: array size
+ *@intervalo: interval
  *Return: void
  */
 void intercambiador_shell(int *array, size_t l, size_t size, size_t intervalo)
@@ -36,8 +36,8 @@ void intercambiador_shell(int *array, size_t l, size_t size, size_t intervalo)
 /**
  *shell_sort - orts an array of integers in ascending
  *order using the Shell sort algorithm, using the Knuth sequence
- *@array: array
- *@size: size
+ *@array: random number array
+ *@size: array size
  *Return: void
  */
 void shell_sort(int *array, size_t size)

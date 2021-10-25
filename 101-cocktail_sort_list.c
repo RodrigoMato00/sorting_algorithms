@@ -1,9 +1,9 @@
 #include "sort.h"
 
 /**
- *nodo_intercambiador - nodo intercambiador
- *@c: c
- *@m: m
+ *nodo_intercambiador - exchanger node
+ *@c: change 1
+ *@m: change 2
  *Return: void
  */
 void nodo_intercambiador(listint_t **c, unsigned char m)
@@ -47,7 +47,7 @@ void nodo_intercambiador(listint_t **c, unsigned char m)
 /**
  *cocktail_sort_list - sorts a doubly linked list of integers in ascending
  *order using the Cocktail shaker sort algorithm
- *@list: list
+ *@list: random number list
  *Return:void
  */
 void cocktail_sort_list(listint_t **list)

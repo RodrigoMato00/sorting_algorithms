@@ -2,11 +2,11 @@
 
 /**
  *part_array - partition array
- *@lo: lo
- *@hi: hi
- *@array: array
- *@size: size
- *Return: el valor del pivot
+ *@lo: change 1
+ *@hi: chagne 2
+ *@array: random number array
+ *@size: array size
+ *Return: the value of the pivot 
  */
 int part_array(int *array, int lo, int hi, size_t size)
 {
@@ -43,10 +43,10 @@ int part_array(int *array, int lo, int hi, size_t size)
 
 /**
  *ordenando_rec - ordenando_rec
- *@i: ind inferior de la particion
- *@j: ind de la particion
- *@array: array
- * @size: size
+ *@i: smallest integer of partition 
+ *@j: integer of partition
+ *@array: random number array
+ * @size: array size
  *Return: void
  */
 void ordenando_rec(int *array, int i, int j, size_t size)
@@ -66,8 +66,8 @@ void ordenando_rec(int *array, int i, int j, size_t size)
 /**
  *quick_sort - sorts an array of integers in
  *ascending order using the Quick sort algorithm
- *@array: array
- *@size: size
+ *@array: random number array
+ *@size: array size
  *Return: void
  */
 void quick_sort(int *array, size_t size)

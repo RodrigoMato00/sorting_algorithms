@@ -3,8 +3,8 @@
 
 /**
  *intercambiador_int - intercambia ints
- *@i: int 1
- *@j: int 2
+ *@i: change 1
+ *@j: change 2
  *Return: void
  */
 void intercambiador_int(int *i, int *j)
@@ -18,8 +18,8 @@ void intercambiador_int(int *i, int *j)
 
 /**
  *bubble_sort - bubble sort
- *@array: int *array
- *@size: size_t
+ *@array: random number array
+ *@size: array size
  *Return: void
  **/
 void bubble_sort(int *array, size_t size)

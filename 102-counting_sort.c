@@ -2,9 +2,9 @@
 
 /**
  *count_array - count array
- *@array: array
- *@i: i
- *@size: ize
+ *@array: random number array
+ *@i: changer
+ *@size: array size
  *Return: co_ar
  */
 int *count_array(int *array, size_t i, size_t size)
@@ -42,8 +42,8 @@ int *count_array(int *array, size_t i, size_t size)
 
 /**
  *counting_sort - counting sort
- *@array: array
- *@size: size
+ *@array: random number array
+ *@size: array size
  *Return: void
  */
 void counting_sort(int *array, size_t size)

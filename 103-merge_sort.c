@@ -2,10 +2,10 @@
 
 /**
  *print_merge - print and merge
- *@array: array
- *@p1: p1
- *@p2: p2
- *@size: size
+ *@array: random number array
+ *@p1: changer 1
+ *@p2: changer 2
+ *@size: array size
  *Return: void
  */
 void print_merge(int *array, int *p1, int *p2, size_t size)
@@ -52,8 +52,8 @@ void print_merge(int *array, int *p1, int *p2, size_t size)
 
 /**
  *merge_sort - merge sort
- *@array: array
- *@size: size
+ *@array: random number array
+ *@size: array size
  *Return: void
  */
 void merge_sort(int *array, size_t size)

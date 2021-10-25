@@ -6,7 +6,7 @@
  *@hi: chagne 2
  *@array: random number array
  *@size: array size
- *Return: the value of the pivot 
+ *Return: the value of the pivot
  */
 int part_array(int *array, int lo, int hi, size_t size)
 {
@@ -43,7 +43,7 @@ int part_array(int *array, int lo, int hi, size_t size)
 
 /**
  *ordenando_rec - ordenando_rec
- *@i: smallest integer of partition 
+ *@i: smallest integer of partition
  *@j: integer of partition
  *@array: random number array
  * @size: array size

@@ -16,7 +16,7 @@ void nodo_intercambiador(listint_t **c, unsigned char m)
 	{
 		temporal0 = (*c)->prev;
 		if (temporal0)
-			temporal1 = temporal0->prev
+			temporal1 = temporal0->prev;
 		if ((*c)->next)
 			(*c)->next->prev = temporal0;
 		temporal0->next = (*c)->next;

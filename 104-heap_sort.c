@@ -1,6 +1,11 @@
 #include "sort.h"
 
 /**
+ *intercambiador_int - function that swaps two integers
+ *@array_1: random numbers array
+ *@size: size of the array
+ *@i: changer 1
+ *@j: changer 2
  */
 void intercambiador_int(int *i, int *j, size_t size, int *array_1)
 {
@@ -14,11 +19,15 @@ void intercambiador_int(int *i, int *j, size_t size, int *array_1)
 }
 
 /**
- *heap_value - cambiar los valores en funcion de la pila
+ *heap_value - change the value of the heap
+ *@array_1: array values
+ *@size: size of the array
+ *@i: changer 1
+ *@init: changer 2
  */
 void heap_value(int *array_1, size_t init, size_t i, size_t size)
 {
-	size_t a , b , c;
+	size_t a, b, c;
 
 	a = 0;
 	c = 0;
@@ -39,8 +48,7 @@ void heap_value(int *array_1, size_t init, size_t i, size_t size)
 		{
 			c = b + 1;
 		}
-
-	        if (c == a)
+		if (c == a)
 		{
 			return;
 		}
@@ -53,7 +61,9 @@ void heap_value(int *array_1, size_t init, size_t i, size_t size)
 
 }
 /**
- *array_to_heap - pasa un array a una pila
+ *array_to_heap - pass an array to a stack
+ *@array_1: array in stack
+ *@size: size of the array
  */
 void array_to_heap(int *array_1, size_t size)
 {
@@ -79,6 +89,8 @@ void array_to_heap(int *array_1, size_t size)
 
 /**
  *heap_sort - heap sort
+ *@array: orderd array
+ *@size: size of the array
  */
 void heap_sort(int *array, size_t size)
 {

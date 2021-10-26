@@ -1,26 +1,29 @@
 #include "sort.h"
 
 /**
+ *countador_de_digitos - counts the digits of a number
+ *@i: number to count
+ *Return: number of digits
  */
 int countador_de_digitos(int i)
 {
 	int number = 0;
 	int n_dig = i;
 
-	do
-	{
-		n_dig = n_dig / 10;
+	do {
 		number++;
-	}
-
-	while (n_dig != 0)
+		n_dig = n_dig / 10;
+	} while (n_dig != 0);
 		;
 
 	return (number);
 }
 
 /**
- *_exponencial - devuelve la potencia de un numero
+ *_potencia - returns the power of a number
+ *@a: number to count
+ *@b: power
+ *Return: number of digits
  */
 int _potencia(int a, int b)
 {
@@ -38,6 +41,10 @@ int _potencia(int a, int b)
 }
 
 /**
+ * buscador_de_digitos - finds the digits of a number
+ * @c: number to find
+ * @posicion: number of digits
+ * Return: number of digits
  */
 int buscador_de_digitos(int c, int posicion)
 {
@@ -51,6 +58,11 @@ int buscador_de_digitos(int c, int posicion)
 }
 
 /**
+ *continuacion_radix - sorts an array of integers in ascending order
+ *@array: array to sort
+ *@size: size of the array
+*@d_max: maximum number of array
+*@contenedor: array to store the sorted array
  */
 void continuacion_radix(int *array, int *contenedor, int size, int d_max)
 {
@@ -59,39 +71,32 @@ void continuacion_radix(int *array, int *contenedor, int size, int d_max)
 	int contador, digito;
 
 	array_a_ordenar = malloc(sizeof(int) * size);
-
 	if (array_a_ordenar == NULL)
 	{
 		free(contenedor);
 		return;
 	}
-
 	for (iterador = 1; iterador <= d_max; iterador++)
 	{
-
 		for (contador = 0; contador < 10; contador++)
 		{
 			contenedor[contador] = 0;
 		}
-
 		for (contador = 0; contador < size; contador++)
 		{
 			digito = buscador_de_digitos(array[contador], iterador);
 			contenedor[digito] += 1;
 		}
-
 		for (contador = 1; contador < 10; contador++)
 		{
 			contenedor[contador] += contenedor[contador - 1];
 		}
-
 		for (contador = (size - 1); contador >= 0; contador--)
 		{
 			digito = buscador_de_digitos(array[contador], iterador);
 			array_a_ordenar[contenedor[digito] - 1] = array[contador];
 			contenedor[digito] -= 1;
 		}
-
 		for (contador = 0; contador < size; contador++)
 		{
 			array[contador] = array_a_ordenar[contador];
@@ -103,6 +108,10 @@ void continuacion_radix(int *array, int *contenedor, int size, int d_max)
 }
 
 /**
+ *radix_sort - sorts an array of integers in ascending
+  order using radix sort algorithm
+ *@array: array to sort
+ *@size: size of the array
  */
 void radix_sort(int *array, size_t size)
 {

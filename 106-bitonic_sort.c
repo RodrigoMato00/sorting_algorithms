@@ -1,7 +1,11 @@
 #include "sort.h"
 
 /**
- *orden - ordena los valores de un array con respecto al algoritmo Bitonic sort
+ *orden - sort the values of an array with respectto the bitonic sort algorithm
+ *@array: array to be sorted
+ *@size: size of the array
+ *@arr:check if the array is sorted
+ * Return: void
  */
 void orden(char arr, int *array, size_t size)
 {
@@ -21,6 +25,9 @@ void orden(char arr, int *array, size_t size)
 }
 /**
  * merge_array - funcion que fusiona dos arrays, es recursiva
+ * @array: fusion to array
+ * @size: size of the array
+ * @arr:check if the array is sorted
  */
 void merge_array(char arr, int *array, size_t size)
 {
@@ -35,7 +42,12 @@ void merge_array(char arr, int *array, size_t size)
 }
 
 /**
- *bitonic_recursivo - algoritmo bitonic recursivo
+ *bitonic_recursivo - sort the values of an array with respectto
+*the bitonic sort algorithm
+ *@array: array to be sorted
+ *@size: size of the array
+ *@i:size
+ *@arr:check if the array is sorted
  */
 void bitonic_recursivo(char arr, int *array, size_t size, size_t i)
 {
@@ -44,7 +56,7 @@ void bitonic_recursivo(char arr, int *array, size_t size, size_t i)
 		return;
 	}
 
-	printf("Merging [%lu/%lu] (%s):\n", size, i, (arr == 1) ? "UP" : "DOWN");	
+	printf("Merging [%lu/%lu] (%s):\n", size, i, (arr == 1) ? "UP" : "DOWN");
 	print_array(array, size);
 
 	bitonic_recursivo(1, array, size / 2, i);
@@ -58,6 +70,12 @@ void bitonic_recursivo(char arr, int *array, size_t size, size_t i)
 
 }
 
+/**
+ *bitonic_sort - sort the values of an array with respectto
+ *@array: array sorted
+ *@size: size of the array
+ * Return: void
+ */
 void bitonic_sort(int *array, size_t size)
 {
 	bitonic_recursivo(1, array, size, size);

@@ -62,7 +62,7 @@ void array_to_heap(int *array_1, size_t size)
 	init = 0;
 
 	init = (size - 2) / 2;
-	while (init > 0)
+	while (init)
 	{
 		heap_value(array_1, (size_t)init, size - 1, size);
 		if (init)

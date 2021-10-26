@@ -109,7 +109,7 @@ void continuacion_radix(int *array, int *contenedor, int size, int d_max)
 
 /**
  *radix_sort - sorts an array of integers in ascending
-  order using radix sort algorithm
+ *order using radix sort algorithm
  *@array: array to sort
  *@size: size of the array
  */

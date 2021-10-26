@@ -57,12 +57,12 @@ void heap_value(int *array_1, size_t init, size_t i, size_t size)
  */
 void array_to_heap(int *array_1, size_t size)
 {
-	size_t init;
+	ssize_t init;
 
 	init = 0;
 
 	init = (size - 2) / 2;
-	while (init)
+	while (init >= 0)
 	{
 		heap_value(array_1, (size_t)init, size - 1, size);
 		if (init)

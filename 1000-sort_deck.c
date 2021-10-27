@@ -1,7 +1,10 @@
 #include "deck.h"
 
 /**
- *comapara_str - compara la suma ascii de caracteres en dos strings
+ *_compara_str - compara la suma ascii de caracteres en dos strings
+ *@comp1: string 1
+ *@comp2: string 2
+ *Return: 0 si son iguales, 1 si comp1 es mayor, -1 si comp2 es mayor
  */
 int _compara_str(char *comp1, char *comp2)
 {
@@ -32,6 +35,10 @@ int _compara_str(char *comp1, char *comp2)
 }
 
 /**
+ * ace_to_king - reemplaza el valor de la carta de as a 10
+ * @carta1: card comapred
+ * @carta2: card comapred
+ * Return: 0
  */
 short ace_to_king(deck_node_t *carta1, deck_node_t *carta2)
 {
@@ -71,6 +78,9 @@ short ace_to_king(deck_node_t *carta1, deck_node_t *carta2)
 }
 
 /**
+ * sort_deck - sort the deck
+ * @deck: pointer to the first node of the deck
+ * Return: void
  */
 void sort_deck(deck_node_t **deck)
 {
@@ -107,7 +117,6 @@ void sort_deck(deck_node_t **deck)
 				{
 					iterador->prev->next = temporal;
 				}
-
 				iterador->prev = temporal;
 				continue;
 			}
